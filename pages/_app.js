@@ -6,6 +6,7 @@ import { repositoryName, linkResolver } from '../prismicio'
 import { Heading } from '../components/Heading'
 
 import '../styles/globals.css'
+import MainCourseMenu, { MenuCard } from '../components/MainCourseMenu'
 
 const NextLinkShim = ({ href, children, locale, ...props }) => {
   return (
@@ -97,6 +98,12 @@ export default function App({ Component, pageProps }) {
             </div>
           ) */}
         <Component {...pageProps} />
+        <>
+        {
+          pageProps.page.uid == 'home' && <><MenuCard></MenuCard>
+          <MainCourseMenu></MainCourseMenu></>
+        }
+        </>
       </PrismicPreview>
     </PrismicProvider>
   )
