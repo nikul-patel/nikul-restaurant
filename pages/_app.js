@@ -100,7 +100,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
         <>
         {
-          pageProps.page.uid == 'home' && <><MenuCard></MenuCard>
+          pageProps && pageProps?.page?.uid == 'home' && <><MenuCard></MenuCard>
           <MainCourseMenu></MainCourseMenu></>
         }
         </>
